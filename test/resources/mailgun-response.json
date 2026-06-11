@@ -1,0 +1,131 @@
+{
+  "items": [
+    {
+      "severity": "permanent",
+      "storage": {
+        "url": "https://se.api.mailgun.net/v3/domains/qa.tax.service.gov.uk/messages/AwABBfIfZdko7BILbiZC8JHz7dOPxJ63Zg==",
+        "key": "AwABBfIfZdko7BILbiZC8JHz7dOPxJ63Zg=="
+      },
+      "delivery-status": {
+        "bounce-code": "5.0.0",
+        "message": "smtp; Message bounced due to organizational settings.",
+        "code": 550,
+        "description": ""
+      },
+      "log-level": "error",
+      "id": "e8zWBBn3Rrmmiy41AxMMlA",
+      "reason": "generic",
+      "flags": {
+        "is-delayed-bounce": true
+      },
+      "timestamp": 1631891205.7313,
+      "recipient": "test@digital.hmrc.gov.uk",
+      "event": "failed"
+    },
+    {
+      "tags": [
+        "template.cds_ddi_setup_dcs_alert",
+        "regime.online-payment-service",
+        "mdtp"
+      ],
+      "timestamp": 1631895080.372047,
+      "storage": {
+        "url": "https://se.api.mailgun.net/v3/domains/qa.tax.service.gov.uk/messages/AwABBWbOexo9VOb77XtKDLS5OQwaaJ3MZg==",
+        "key": "AwABBWbOexo9VOb77XtKDLS5OQwaaJ3MZg=="
+      },
+      "envelope": {
+        "transport": "smtp",
+        "sender": "noreply@qa.tax.service.gov.uk",
+        "sending-ip": "146.20.113.8",
+        "targets": "test@digital.hmrc.gov.uk"
+      },
+      "recipient-domain": "digital.hmrc.gov.uk",
+      "id": "t-01nwBBRO2D6wjku33X_A",
+      "campaigns": [],
+      "user-variables": {
+        "enrolment": "5AQ3uvhXNzOfPk7vc7msDrzWUKRoQL41q8jSXqpHlIqqeK03Ce7C477fq1p3rKP1"
+      },
+      "flags": {
+        "is-routed": false,
+        "is-authenticated": true,
+        "is-encrypted": true,
+        "is-system-test": false,
+        "is-test-mode": false
+      },
+      "log-level": "info",
+      "message": {
+        "headers": {
+          "to": "murali.rajuF99@digital.hmrc.gov.uk",
+          "message-id": "20210917161117.1.26A20127DCEB4D6D@qa.tax.service.gov.uk",
+          "from": "HMRC Direct Debit noreply@qa.tax.service.gov.uk",
+          "subject": "HMRC Duty Deferred: Direct Debit set up"
+        },
+        "attachments": [],
+        "size": 6021
+      },
+      "recipient": "murali.rajuF99@digital.hmrc.gov.uk",
+      "event": "delivered",
+      "delivery-status": {
+        "tls": true,
+        "mx-host": "aspmx.l.google.com",
+        "code": 250,
+        "description": "",
+        "session-seconds": 1.908277988433838,
+        "utf8": true,
+        "attempt-no": 1,
+        "message": "OK",
+        "certificate-verified": true
+      }
+    },
+    {
+      "tags": [
+        "template.cds_ddi_setup_dcs_alert",
+        "regime.online-payment-service",
+        "mdtp"
+      ],
+      "timestamp": 1631895077.138749,
+      "storage": {
+        "url": "https://se.api.mailgun.net/v3/domains/qa.tax.service.gov.uk/messages/AwABBWbOexo9VOb77XtKDLS5OQwaaJ3MZg==",
+        "key": "AwABBWbOexo9VOb77XtKDLS5OQwaaJ3MZg=="
+      },
+      "envelope": {
+        "sender": "noreply@qa.tax.service.gov.uk",
+        "transport": "smtp",
+        "targets": "test@digital.hmrc.gov.uk"
+      },
+      "recipient-domain": "digital.hmrc.gov.uk",
+      "method": "http",
+      "campaigns": [],
+      "user-variables": {
+        "enrolment": "5AQ3uvhXNzOfPk7vc7msDrzWUKRoQL41q8jSXqpHlIqqeK03Ce7C477fq1p3rKP1"
+      },
+      "flags": {
+        "is-routed": false,
+        "is-authenticated": true,
+        "is-encrypted": true,
+        "is-system-test": false,
+        "is-test-mode": false
+      },
+      "log-level": "info",
+      "id": "aU_Yf31ATbWtgpsX35DK0A",
+      "message": {
+        "headers": {
+          "to": "murali.rajuF99@digital.hmrc.gov.uk",
+          "message-id": "20210917161117.1.26A20127DCEB4D6D@qa.tax.service.gov.uk",
+          "from": "HMRC Direct Debit noreply@qa.tax.service.gov.uk",
+          "subject": "HMRC Duty Deferred: Direct Debit set up"
+        },
+        "attachments": [],
+        "size": 6021
+      },
+      "recipient": "murali.rajuF99@digital.hmrc.gov.uk",
+      "event": "accepted"
+    }
+  ],
+  "paging": {
+    "previous": "https://api.mailgun.net/v3/qa.tax.service.gov.uk/events/WzMseyJhIjp0cnVlLCJiIjoiMjAyMS0wOS0xOFQwNzoyNDowMC4wMDArMDA6MDAifSx7ImIiOiIyMDIxLTA5LTE4VDA3OjI0OjAwLjAwMCswMDowMCIsImUiOiIyMDIxLTA5LTE4VDA3OjIzOjU5Ljk5OSswMDowMCJ9LG51bGwsWyJwIiwiZiJdLG51bGwsW1siYWNjb3VudC5pZCIsIjUyYjk1ZWI5NWE3NjE4N2JkMGRiMWYzOSJdLFsiZG9tYWluLm5hbWUiLCJxYS50YXguc2VydmljZS5nb3YudWsiXSxbInRhZ3MiLCJtZHRwIl0sWyJldmVudCIsImZhaWxlZCBPUiByZWplY3RlZCBPUiBvcGVuZWQgT1IgYWNjZXB0ZWQgT1IgZGVsaXZlcmVkIE9SIGNvbXBsYWluZWRcXF0iXV0sNTBd",
+    "first": "https://api.mailgun.net/v3/qa.tax.service.gov.uk/events/WzMseyJhIjp0cnVlLCJiIjoiMjAyMS0wOS0xOFQwNzoyNDowMC4wMDArMDA6MDAifSx7ImEiOnRydWUsImIiOiIyMDIxLTA5LTE4VDA3OjI0OjAwLjAwMCswMDowMCJ9LG51bGwsWyJmIl0sbnVsbCxbWyJhY2NvdW50LmlkIiwiNTJiOTVlYjk1YTc2MTg3YmQwZGIxZjM5Il0sWyJkb21haW4ubmFtZSIsInFhLnRheC5zZXJ2aWNlLmdvdi51ayJdLFsidGFncyIsIm1kdHAiXSxbImV2ZW50IiwiZmFpbGVkIE9SIHJlamVjdGVkIE9SIG9wZW5lZCBPUiBhY2NlcHRlZCBPUiBkZWxpdmVyZWQgT1IgY29tcGxhaW5lZFxcXSJdXSw1MF0=",
+    "last": "https://api.mailgun.net/v3/qa.tax.service.gov.uk/events/WzMseyJhIjp0cnVlLCJiIjoiMjAyMS0wOS0xOFQwNzoyNDowMC4wMDArMDA6MDAifSx7ImIiOiIyMDM3LTEyLTMxVDIzOjU5OjU5Ljk5OSswMDowMCIsImUiOiIyMDIxLTA5LTE4VDA3OjIzOjU5Ljk5OSswMDowMCJ9LG51bGwsWyJwIiwiZiJdLG51bGwsW1siYWNjb3VudC5pZCIsIjUyYjk1ZWI5NWE3NjE4N2JkMGRiMWYzOSJdLFsiZG9tYWluLm5hbWUiLCJxYS50YXguc2VydmljZS5nb3YudWsiXSxbInRhZ3MiLCJtZHRwIl0sWyJldmVudCIsImZhaWxlZCBPUiByZWplY3RlZCBPUiBvcGVuZWQgT1IgYWNjZXB0ZWQgT1IgZGVsaXZlcmVkIE9SIGNvbXBsYWluZWRcXF0iXV0sNTBd",
+    "next": "https://api.mailgun.net/v3/qa.tax.service.gov.uk/events/WzMseyJhIjp0cnVlLCJiIjoiMjAyMS0wOS0xOFQwNzoyNDowMC4wMDArMDA6MDAifSx7ImEiOnRydWUsImIiOiIyMDIxLTA5LTE4VDA3OjI0OjAwLjAwMCswMDowMCJ9LG51bGwsWyJmIl0sbnVsbCxbWyJhY2NvdW50LmlkIiwiNTJiOTVlYjk1YTc2MTg3YmQwZGIxZjM5Il0sWyJkb21haW4ubmFtZSIsInFhLnRheC5zZXJ2aWNlLmdvdi51ayJdLFsidGFncyIsIm1kdHAiXSxbImV2ZW50IiwiZmFpbGVkIE9SIHJlamVjdGVkIE9SIG9wZW5lZCBPUiBhY2NlcHRlZCBPUiBkZWxpdmVyZWQgT1IgY29tcGxhaW5lZFxcXSJdXSw1MF0="
+  }
+}

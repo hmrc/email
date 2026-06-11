@@ -1,0 +1,66 @@
+/*
+ * Copyright 2023 HM Revenue & Customs
+ *
+ */
+
+package uk.gov.hmrc.email.controllers.model
+
+import play.api.libs.functional.syntax._
+import play.api.libs.json._
+import uk.gov.hmrc.email.emailaddress.EmailAddress
+import uk.gov.hmrc.email.controllers.util.SendEmailRequestValidator._
+
+case class SendEmailRequest(
+  to: List[EmailAddress],
+  templateId: String,
+  parameters: Map[String, String],
+  tags: Map[String, String] = Map.empty[String, String],
+  force: Boolean,
+  eventUrl: Option[String],
+  onSendUrl: Option[String],
+  auditData: Map[String, String],
+  alertQueue: Option[String] = None,
+  emailSource: Option[String] = None,
+  replyToAddress: Option[EmailAddress] = None,
+  enrolment: Option[String] = None
+)
+
+object SendEmailRequest {
+
+  implicit val format: Format[SendEmailRequest] = new Format[SendEmailRequest] {
+
+    import uk.gov.hmrc.email.emailaddress.PlayJsonFormats._
+
+    def reads(json: JsValue): JsResult[SendEmailRequest] =
+      (
+        (__ \ "to").read[List[EmailAddress]] and
+          (__ \ "templateId").read[String] and
+          (__ \ "parameters")
+            .readNullable[Map[String, String]]
+            .map(_.getOrElse(Map.empty)) and
+          (__ \ "tags")
+            .readNullable[Map[String, String]]
+            .map(_.getOrElse(Map.empty)) and
+          (__ \ "force").readNullable[Boolean].map(_.getOrElse(false)) and
+          (__ \ "eventUrl").readNullable[String] and
+          (__ \ "onSendUrl").readNullable[String] and
+          (__ \ "auditData")
+            .readNullable[Map[String, String]]
+            .map(_.getOrElse(Map.empty)) and
+          (__ \ "alertQueue").readNullable[String](jsonAlertQueueReads) and
+          (__ \ "emailSource").readNullable[String] and
+          (__ \ "replyToAddress").readNullable[EmailAddress] and
+          (__ \ "enrolment").readNullable[String]
+      )(SendEmailRequest.apply)
+        .reads(json)
+        .flatMap { sendEmailRequest =>
+          if (sendEmailRequest.to.isEmpty)
+            JsError(__ \ "to", "recipients list is empty")
+          else
+            JsSuccess(sendEmailRequest)
+        }
+
+    def writes(o: SendEmailRequest): JsValue =
+      Json.writes[SendEmailRequest].writes(o)
+  }
+}

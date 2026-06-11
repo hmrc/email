@@ -1,0 +1,53 @@
+/*
+ * Copyright 2024 HM Revenue & Customs
+ *
+ */
+
+package uk.gov.hmrc.email.scheduled
+
+import org.apache.pekko.actor.ActorSystem
+import org.apache.pekko.stream.scaladsl.Sink
+import play.api.inject.ApplicationLifecycle
+import play.api.{ Configuration, Logger }
+import uk.gov.hmrc.email.config.ScheduledJobConfig
+import uk.gov.hmrc.email.services.SuppressionListManagement
+import uk.gov.hmrc.email.{ TimedLog, Warning }
+import uk.gov.hmrc.mongo.lock.{ LockService, MongoLockRepository }
+
+import javax.inject.{ Inject, Singleton }
+import scala.concurrent.duration.DurationInt
+import scala.concurrent.ExecutionContext
+
+@Singleton
+class CleanSuppressionListJob @Inject() (
+  val configuration: Configuration,
+  lockRepository: MongoLockRepository,
+  suppressionListManagement: SuppressionListManagement,
+  lifecycle: ApplicationLifecycle,
+  sink: Sink[Unit, ?] = Sink.ignore
+)(implicit actorSystem: ActorSystem) {
+  private val name: String = "clean-suppression-list"
+
+  private implicit val ec: ExecutionContext = actorSystem.dispatcher
+  private val config = ScheduledJobConfig(configuration, name)
+  private val logger: Logger = Logger(getClass)
+
+  private val domainsOfInterest: List[String] =
+    configuration.get[Seq[String]]("suppression-list-delete-domain-list").toList
+
+  val stream: ScheduledStream = ScheduledStream
+    .builder(config, name, sink, logger, Some(lifecycle))(actorSystem)
+    .withWorkload {
+      TimedLog(logger, "CleanSuppressionListJob", Warning) {
+        logger.warn("CleanSuppressionListJob Start")
+        for {
+          _ <- suppressionListManagement.clean(domainsOfInterest)
+          _ = logger.debug(s"CleanSuppressionListJob")
+        } yield ()
+      }
+    }
+    .withLocking {
+      LockService(lockRepository, lockId = name, 1.hour)
+    }
+    .build()
+}

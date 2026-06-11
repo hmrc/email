@@ -1,0 +1,10 @@
+# microservice app routes
+
+POST   /events                                   uk.gov.hmrc.email.controllers.EventsController.process
+GET    /event/:transId                           uk.gov.hmrc.email.controllers.EventsController.findEvent(transId: String)
+
+POST   /:domain/email                           uk.gov.hmrc.email.controllers.EmailController.send(domain: String)
+
+
+# DEPRECATED ENDPOINTS
+POST   /send-templated-email                    uk.gov.hmrc.email.controllers.EmailController.sendTemplatedEmail()
