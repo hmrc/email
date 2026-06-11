@@ -1,1 +1,10 @@
 repoVisibility: public_0C3F0CE3E6E6448FAD341E7BFA50FCD333E06A20CFF05FCACE61154DDBBADF71
+digital-service: Digital Contact
+description: Manages sending of email to third parties and tracking of bounces
+type: service
+service-type: Backend
+test-repositories:
+  - digital-contact-performance-tests
+  - platform-performance-tests
+  - digital-contact-2wsm-test
+tags: []
