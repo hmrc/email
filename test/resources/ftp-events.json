@@ -1,0 +1,6 @@
+[
+  {
+    "df_payload": "b'{\"deliveryInfoNotification\": {\"deliveryInfo\": {\"timeStamp\": \"2023-06-08T10:04:12.827+01:00\", \"Description\": \"Submitted\", \"code\": \"7501\", \"deliveryChannel\": \"email\", \"additionalInfo\": \"\", \"destination\": \"chandan.ray+ttt@digital.hmrc.gov.uk\", \"destinationType\": \"email\", \"deliveryStatus\": \"Submitted\"}, \"subtid\": \"\", \"transid\": \"f493908b-b178-4ecc-ac51-65310bdd8fd4\", \"callbackData\": \"eyJyZWdpbWUiOiJ6dFpBbG5EWTJxVVRORmVCRDZtM01RPT0iLCJ0ZW1wbGF0ZUlkIjoidWRBTEp5SWJLYXBJLzdkMkhoaDlYT20yblJLeHJQMVpRcUdYTEFTUUw4bz0iLCJwbGF0Zm9ybSI6IjRQUmlxc3dqN3JxdGpoRVMzUFdjZGc9PSIsIkNvbnRhY3RQb2xpY3lHcm91cElkIjoieWs3X2hNOGVRUWVGd0Ezekh5ZlJnZyJ9\", \"correlationid\": \"aa08a51f-4bb0-4493-afab-e61ffa73fcd5\"}}'",
+    "df_response_content": "b'{\"code\": \"MESSAGE_THROTTLED_OUT\", \"message\": \"The request for the API is throttled as you have exceeded your quota.\"}'"
+  }
+]

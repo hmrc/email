@@ -1,0 +1,51 @@
+/*
+ * Copyright 2023 HM Revenue & Customs
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package uk.gov.hmrc.email.connectors
+
+import uk.gov.hmrc.email.config.SenderDomainConfigurationLoader
+import uk.gov.hmrc.http.client.HttpClientV2
+import uk.gov.hmrc.play.audit.http.connector.AuditConnector
+import uk.gov.hmrc.play.bootstrap.config.ServicesConfig
+import javax.inject.{ Inject, Singleton }
+import scala.concurrent.ExecutionContext
+
+@Singleton
+class ImiConnectors @Inject() (
+  servicesConfig: ServicesConfig,
+  senderDomainConfigurationLoader: SenderDomainConfigurationLoader,
+  httpClient: HttpClientV2,
+  audit: AuditConnector
+)(implicit ec: ExecutionContext) {
+
+  def baseUrl(serviceName: String): String = servicesConfig.baseUrl(serviceName)
+
+  val consentKey: String = servicesConfig.getString("imi.consentServiceKey")
+
+  lazy val all: Map[String, ImiConnector] = senderDomainConfigurationLoader.default.map {
+    case (senderDomain, senderDomainConfiguration) =>
+      val mailgunConnector =
+        new ImiConnector(
+          senderDomainConfiguration,
+          httpClient,
+          consentKey,
+          baseUrl("imi"),
+          baseUrl("imi-consent"),
+          audit
+        )
+      senderDomain -> mailgunConnector
+  }
+}

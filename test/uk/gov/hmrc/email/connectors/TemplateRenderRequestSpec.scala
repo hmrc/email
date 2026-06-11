@@ -1,0 +1,43 @@
+/*
+ * Copyright 2025 HM Revenue & Customs
+ *
+ */
+
+package uk.gov.hmrc.email.connectors
+
+import play.api.libs.json.{ JsResultException, Json }
+import uk.gov.hmrc.email.SpecBase
+import uk.gov.hmrc.email.TestData.{ TEST_EMAIL_ADDRESS_VALUE, TEST_PARAMETERS_MAP }
+
+class TemplateRenderRequestSpec extends SpecBase {
+
+  "Json Reads" should {
+    import TemplateRenderRequest.templateRenderRequestFormat
+
+    "read the json correctly" in new Setup {
+      Json.parse(templateRenderRequestJsonString).as[TemplateRenderRequest] mustBe templateRenderRequest
+    }
+
+    "throw the exception for invalid json" in new Setup {
+      intercept[JsResultException] {
+        Json.parse(templateRenderRequestInvalidJsonString).as[TemplateRenderRequest]
+      }
+    }
+  }
+
+  "Json Writes" should {
+    "write the object correctly" in new Setup {
+      Json.toJson(templateRenderRequest) mustBe Json.parse(templateRenderRequestJsonString)
+    }
+  }
+
+  trait Setup {
+    val templateRenderRequest: TemplateRenderRequest =
+      TemplateRenderRequest(parameters = TEST_PARAMETERS_MAP, email = Some(TEST_EMAIL_ADDRESS_VALUE))
+
+    val templateRenderRequestJsonString: String =
+      """{"parameters":{"test_key":"test_value"},"email":"test@test.com"}""".stripMargin
+
+    val templateRenderRequestInvalidJsonString: String = """{"email":"test@test.com"}""".stripMargin
+  }
+}

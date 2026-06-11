@@ -1,0 +1,128 @@
+{
+  "Received": "by 2002:ae9:ef8c:: with SMTP id d134mr986040qkg.93; Tue, 19 Oct 2021 10:00:21 -0700 (PDT)",
+  "stripped-signature": "X-Mailgun-Track-Opens: true\r\nX-Mailgun-Tag: template.cds_ddi_setup_dcs_alert\r\nX-Mailgun-Tag: regime.online-payment-service\r\nX-Mailgun-Tag: mdtp",
+  "From": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+  "Return-Path": "<>",
+  "recipients": "bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk",
+  "Auto-Submitted": "auto-replied",
+  "X-Google-Dkim-Signature": "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=1e100.net; s=20210112;        h=x-gm-message-state:to:auto-submitted:message-id:date:from:subject         :references:in-reply-to;        bh=qRZAmxM+zcZTr8MS9ETeZwPCc8oYimgHxZy1dn89LWE=;        b=5YRw8dcrZlPhGobDIWfnqQlK108PabSSWRSsIsAAi2ZmkqJBlbw5KXFEmYmowy0oMV         GIYGaNL/f+EvFD6XyUX6oT2kAPYJt2Klgxb1n06rh5RPHdAvjvXuKyh75QasTnn6IvQz         pb9fMbhUsR3DDSD9lZIM8wCaOw1P/sVZBPnVy3XC2ZvDTysIIze/IDNU6Wex3BZcwUrd         UDxmEhLilbJjZ02ISYmk1nCSdkvR6KojpFyBAgOI9KL+nzLQcTbapTQZ4l7/FuNiVkZ4         0Y4v71lmjHgWRIu38qSfeiSSRfZsoxqBfWHhAohnq1cJaGajWyqf5I6cYuncCHVdiCQj         W6LA==",
+  "To": "bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk",
+  "message-headers": [
+    [
+      "X-Mailgun-Incoming",
+      "Yes"
+    ],
+    [
+      "Received",
+      "from mail-qk1-f194.google.com (mail-qk1-f194.google.com [209.85.222.194]) by mxa.mailgun.org with ESMTP id 616ef9a5.7f019640d8b0-smtp-in-n02; Tue, 19 Oct 2021 17:00:21 -0000 (UTC)"
+    ],
+    [
+      "Received",
+      "by mail-qk1-f194.google.com with SMTP id j12so577994qkk.5        for <bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk>; Tue, 19 Oct 2021 10:00:21 -0700 (PDT)"
+    ],
+    [
+      "Dkim-Signature",
+      "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=googlemail.com; s=20210112;        h=to:auto-submitted:message-id:date:from:subject:references         :in-reply-to;        bh=qRZAmxM+zcZTr8MS9ETeZwPCc8oYimgHxZy1dn89LWE=;        b=hKMksvpE9OUvF8I8XpvVK5y9KoGhOWqKB8sOuejU68N9LTpdYTm7HlxIEnxcOeNfxi         eGM0fNu3RYJBhiRDliqOL0Bp00tdO+fo5qvPgyjLEsNAU/uoTYgPCf3QvHGBYIPOY3jw         X2NN8AEmbsDX/cZWTRHMxigfFzuZEIn4ntx/NAX6KhDog7UJNLT/3iKqNdkTuqmALA11         eKINQYMlqZYdaADLU/Z4k3blUggcsg3YRfLIVxB4rTUAZPFMTWVa5nlp+xsIHDKMPQXB         eq5HEaBB2/BKPwMO4PSRxzWrIP8ePtx6bm0Vqn4Nexzi8U84EgrnTdW5cq0BQx2Hjvia         Z3ow=="
+    ],
+    [
+      "X-Google-Dkim-Signature",
+      "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=1e100.net; s=20210112;        h=x-gm-message-state:to:auto-submitted:message-id:date:from:subject         :references:in-reply-to;        bh=qRZAmxM+zcZTr8MS9ETeZwPCc8oYimgHxZy1dn89LWE=;        b=5YRw8dcrZlPhGobDIWfnqQlK108PabSSWRSsIsAAi2ZmkqJBlbw5KXFEmYmowy0oMV         GIYGaNL/f+EvFD6XyUX6oT2kAPYJt2Klgxb1n06rh5RPHdAvjvXuKyh75QasTnn6IvQz         pb9fMbhUsR3DDSD9lZIM8wCaOw1P/sVZBPnVy3XC2ZvDTysIIze/IDNU6Wex3BZcwUrd         UDxmEhLilbJjZ02ISYmk1nCSdkvR6KojpFyBAgOI9KL+nzLQcTbapTQZ4l7/FuNiVkZ4         0Y4v71lmjHgWRIu38qSfeiSSRfZsoxqBfWHhAohnq1cJaGajWyqf5I6cYuncCHVdiCQj         W6LA=="
+    ],
+    [
+      "X-Gm-Message-State",
+      "AOAM533CXYLDXHQpEE0ZmbfJD4aGF/bDIIUiaxUQR+BBPXzcYsTigRrI\tuYB5pV1n1B6j3PBBpt3GXPd8OsdS3j3hmXDudswGdg=="
+    ],
+    [
+      "X-Google-Smtp-Source",
+      "ABdhPJyfD8YQ7vL3m/ZZqaXLofhed5E2CWIsmC/9MhvUde1KfpAtjfteWyTpf3yZVk2M8ZvnCx9wjZZOckkBJXm0d7oQQuP/CmpF86E="
+    ],
+    [
+      "X-Received",
+      "by 2002:ae9:ef8c:: with SMTP id d134mr960058qkg.93.1634662821488;        Tue, 19 Oct 2021 10:00:21 -0700 (PDT)"
+    ],
+    [
+      "Content-Type",
+      "multipart/report; boundary=\"000000000000cd631405ceb79836\"; report-type=\"delivery-status\""
+    ],
+    [
+      "To",
+      "bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk"
+    ],
+    [
+      "Received",
+      "by 2002:ae9:ef8c:: with SMTP id d134mr986040qkg.93; Tue, 19 Oct 2021 10:00:21 -0700 (PDT)"
+    ],
+    [
+      "Return-Path",
+      "<>"
+    ],
+    [
+      "Auto-Submitted",
+      "auto-replied"
+    ],
+    [
+      "Message-Id",
+      "<616ef9a5.1c69fb81.7decd.263b.GMR@mx.google.com>"
+    ],
+    [
+      "Date",
+      "Tue, 19 Oct 2021 10:00:21 -0700 (PDT)"
+    ],
+    [
+      "From",
+      "Mail Delivery Subsystem <mailer-daemon@googlemail.com>"
+    ],
+    [
+      "Subject",
+      "Delivery Status Notification (Failure)"
+    ],
+    [
+      "References",
+      "<20211019165937.1.E17B303ADB9A28F9@qa.tax.service.gov.uk>"
+    ],
+    [
+      "In-Reply-To",
+      "<20211019165937.1.E17B303ADB9A28F9@qa.tax.service.gov.uk>"
+    ],
+    [
+      "X-Failed-Recipients",
+      "murali.raju211@digital.hmrc.gov.uk"
+    ]
+  ],
+  "Dkim-Signature": "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=googlemail.com; s=20210112;        h=to:auto-submitted:message-id:date:from:subject:references         :in-reply-to;        bh=qRZAmxM+zcZTr8MS9ETeZwPCc8oYimgHxZy1dn89LWE=;        b=hKMksvpE9OUvF8I8XpvVK5y9KoGhOWqKB8sOuejU68N9LTpdYTm7HlxIEnxcOeNfxi         eGM0fNu3RYJBhiRDliqOL0Bp00tdO+fo5qvPgyjLEsNAU/uoTYgPCf3QvHGBYIPOY3jw         X2NN8AEmbsDX/cZWTRHMxigfFzuZEIn4ntx/NAX6KhDog7UJNLT/3iKqNdkTuqmALA11         eKINQYMlqZYdaADLU/Z4k3blUggcsg3YRfLIVxB4rTUAZPFMTWVa5nlp+xsIHDKMPQXB         eq5HEaBB2/BKPwMO4PSRxzWrIP8ePtx6bm0Vqn4Nexzi8U84EgrnTdW5cq0BQx2Hjvia         Z3ow==",
+  "X-Failed-Recipients": "murali.raju211@digital.hmrc.gov.uk",
+  "content-id-map": {
+    "<icon.png>": {
+      "url": "https://se.api.mailgun.net/v3/domains/qa.tax.service.gov.uk/messages/AwABBfe2p_q6cypj2NZNIZK-0IcDKRtiZg==/attachments/0",
+      "content-type": "image/png",
+      "name": "icon.png",
+      "size": 6539
+    }
+  },
+  "subject": "Delivery Status Notification (Failure)",
+  "stripped-html": "\n<html>\n<head>\n<style>\n* {\nfont-family:Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n</style>\n</head>\n<body>\n<table cellpadding=\"0\" cellspacing=\"0\" class=\"email-wrapper\" style=\"padding-top:32px;background-color:#ffffff;\"><tbody>\n<tr><td>\n<table cellpadding=0 cellspacing=0><tbody>\n<tr><td style=\"max-width:560px;padding:24px 24px 32px;background-color:#fafafa;border:1px solid #e0e0e0;border-radius:2px\">\n<img style=\"padding:0 24px 16px 0;float:left\" width=72 height=72 alt=\"Error Icon\" src=\"cid:icon.png\">\n<table style=\"min-width:272px;padding-top:8px\"><tbody>\n<tr><td><h2 style=\"font-size:20px;color:#212121;font-weight:bold;margin:0\">\nMessage blocked\n</h2></td></tr>\n<tr><td style=\"padding-top:20px;color:#757575;font-size:16px;font-weight:normal;text-align:left\">\nYour message to <a style='color:#212121;text-decoration:none'><b>murali.raju211@digital.hmrc.gov.uk</b></a> has been blocked. See technical details below for more information.\n</td></tr>\n</tbody></table>\n</td></tr>\n</tbody></table>\n</td></tr>\n<tr style=\"border:none;background-color:#fff;font-size:12.8px;width:90%\">\n<td align=\"left\" style=\"padding:48px 10px\">\nThe response was:<br/>\n<p style=\"font-family:monospace\">\nMessage bounced due to organizational settings.\n</p>\n</td>\n</tr>\n</tbody></table>\n</body>\n</html>\n",
+  "body-delivery-status": "Reporting-MTA: dns; googlemail.com\r\nReceived-From-MTA: dns; bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk\r\nArrival-Date: Tue, 19 Oct 2021 10:00:20 -0700 (PDT)\r\nX-Original-Message-ID: <20211019165937.1.E17B303ADB9A28F9@qa.tax.service.gov.uk>\r\n\r\nFinal-Recipient: rfc822; murali.raju211@digital.hmrc.gov.uk\r\nAction: failed\r\nStatus: 5.0.0\r\nDiagnostic-Code: smtp; Message bounced due to organizational settings.\r\nLast-Attempt-Date: Tue, 19 Oct 2021 10:00:21 -0700 (PDT)\r\n",
+  "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+  "sender": "",
+  "stripped-text": "** Message blocked **\r\n\r\nYour message to murali.raju211@digital.hmrc.gov.uk has been blocked. See technical details below for more information.\r\n\r\n\r\n\r\nThe response was:\r\n\r\nMessage bounced due to organizational settings.\r\nX-Google-Smtp-Source: ABdhPJyz1f82cvxMYPqxkl2PHJz8rgtz6XWraUQGIx3aF/VLz8c1CxstpCrcZ3nr4QArXcHOFBBJ\r\nX-Received: by 2002:ae9:ef8c:: with SMTP id d134mr960012qkg.93.1634662820935;\r\n        Tue, 19 Oct 2021 10:00:20 -0700 (PDT)\r\nARC-Seal: i=1; a=rsa-sha256; t=1634662820; cv=none;\r\n        d=google.com; s=arc-20160816;\r\n        b=0FeUkwvSojEQ9dhsBHMuz+Z01W97VdcQ62lJ9XfZP+NHtnLK6+Ruut9mdmsHAcdrDa\r\n         LQ0aqBux//plxxvIhmZHnZ8zwYYzUtFvynMmrOX9iXivNJDXeQdkZuu+4TcyfMWZewYL\r\n         92B5sDNFcHxGzFoI4Z/QpE5rE85dtdU9sOgLzTgljrLXgLf0DOjqPg+5mnS1cQ0tquZi\r\n         3XvhjSw3rALwTVXni4z+rbny5yB2a63EoU4t+3BAki2YaZ76r1ni4N4U87ww+EfQPKbf\r\n         pCMyVU8DAPSDl6gRy//b6t+5VVM5H/uNbtUzRYTyQzYmn5gWQEzOYfTwdViimFBNgLIn\r\n         UbAA==\r\nARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;\r\n        h=mime-version:subject:from:to:message-id:sender:date:dkim-signature;\r\n        bh=l3FN/m6rcfI6p0RULSQey2pWnrjV62KjwD2d2yJ0zco=;\r\n        b=XX74QISr8ZDp64FEiU5LB93/6NuWh+kBE9JpswPJ1jI51foji+YwrO8frV/F3Rm4Zr\r\n         XpJW0OmR+RuoHDVF7JvlTsyLT/KXbmd1AfD7xHidJLx/YqH676w29r7fTj7v5/K1oOG7\r\n         I6iQLO0DkLam0KO05spOFwc6iPXDXwGvh9za6OkdJJXo68vJnJVC1dhXE2sIak0w3sgj\r\n         e0ZQKLdPvcNACy0u+paZ06F1C54F79NEIEyrJ7FGtRsOxNNskDzAqTh8d3B/Qfq06k84\r\n         KVy7OHrvpnx0zoJ+z+D7WawHMAIZ7yHbWTbOe7xRfGxve4gAYBZekja9Ap9vSm1IAhmA\r\n         o9cA==\r\nARC-Authentication-Results: i=1; mx.google.com;\r\n       dkim=pass header.i=@qa.tax.service.gov.uk header.s=krs header.b=\"gKFi/23y\";\r\n       spf=pass (google.com: domain of bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk designates 146.20.113.8 as permitted sender) smtp.mailfrom=\"bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk\";\r\n       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=service.gov.uk\r\nReturn-Path: <bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk>\r\nReceived: from mail-m8.mailgun.info (mail-m8.mailgun.info. [146.20.113.8])\r\n        by mx.google.com with UTF8SMTPS id f1si3180323qko.255.2021.10.19.10.00.10\r\n        for <murali.raju211@digital.hmrc.gov.uk>\r\n        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);\r\n        Tue, 19 Oct 2021 10:00:20 -0700 (PDT)\r\nReceived-SPF: pass (google.com: domain of bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk designates 146.20.113.8 as permitted sender) client-ip=146.20.113.8;\r\nAuthentication-Results: mx.google.com;\r\n       dkim=pass header.i=@qa.tax.service.gov.uk header.s=krs header.b=\"gKFi/23y\";\r\n       spf=pass (google.com: domain of bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk designates 146.20.113.8 as permitted sender) smtp.mailfrom=\"bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk\";\r\n       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=service.gov.uk\r\nDKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=qa.tax.service.gov.uk;\r\n q=dns/txt; s=krs; t=1634662820; h=Content-Type: Mime-Version: Subject:\r\n From: To: Message-Id: Sender: Date;\r\n bh=l3FN/m6rcfI6p0RULSQey2pWnrjV62KjwD2d2yJ0zco=; b=gKFi/23yhXKEl084W75BbpCtGyrwSVNE5tLEAlVqOQCqRncH4DW/KsdOzjXWAWuDYMPw3b+z\r\n QaAyLyS4V+A5T3wywcc/MtGh8goCoR6YQg7g8xjcPBvzlBn8oXzu8T68aDzf4TTIfdLP1bh0\r\n JBi6yaRBmo6e7hp/cFjyjpu7+D0=\r\nX-Mailgun-Sending-Ip: 146.20.113.8\r\nX-Mailgun-Sid: WyI3YTJiNyIsICJtdXJhbGkucmFqdTIxMUBkaWdpdGFsLmhtcmMuZ292LnVrIiwgIjBlMDE2Il0=\r\nReceived: by luna.mailgun.net with HTTP; Tue, 19 Oct 2021 16:59:37 +0000\r\nDate: Tue, 19 Oct 2021 16:59:37 +0000\r\nSender: noreply@qa.tax.service.gov.uk\r\nMessage-Id: <20211019165937.1.E17B303ADB9A28F9@qa.tax.service.gov.uk>\r\nX-Mailgun-Variables: {\"enrolment\": \"5AQ3uvhXNzOfPk7vc7msDrFOJWF4zwCwRKIQlBrPq4AepI0Xd30+zSt6jO9iURJj\"}",
+  "X-Mailgun-Incoming": "Yes",
+  "X-Received": "by 2002:ae9:ef8c:: with SMTP id d134mr960058qkg.93.1634662821488;        Tue, 19 Oct 2021 10:00:21 -0700 (PDT)",
+  "X-Gm-Message-State": "AOAM533CXYLDXHQpEE0ZmbfJD4aGF/bDIIUiaxUQR+BBPXzcYsTigRrI\tuYB5pV1n1B6j3PBBpt3GXPd8OsdS3j3hmXDudswGdg==",
+  "body-plain": "\r\n** Message blocked **\r\n\r\nYour message to murali.raju211@digital.hmrc.gov.uk has been blocked. See technical details below for more information.\r\n\r\n\r\n\r\nThe response was:\r\n\r\nMessage bounced due to organizational settings.\r\nX-Google-Smtp-Source: ABdhPJyz1f82cvxMYPqxkl2PHJz8rgtz6XWraUQGIx3aF/VLz8c1CxstpCrcZ3nr4QArXcHOFBBJ\r\nX-Received: by 2002:ae9:ef8c:: with SMTP id d134mr960012qkg.93.1634662820935;\r\n        Tue, 19 Oct 2021 10:00:20 -0700 (PDT)\r\nARC-Seal: i=1; a=rsa-sha256; t=1634662820; cv=none;\r\n        d=google.com; s=arc-20160816;\r\n        b=0FeUkwvSojEQ9dhsBHMuz+Z01W97VdcQ62lJ9XfZP+NHtnLK6+Ruut9mdmsHAcdrDa\r\n         LQ0aqBux//plxxvIhmZHnZ8zwYYzUtFvynMmrOX9iXivNJDXeQdkZuu+4TcyfMWZewYL\r\n         92B5sDNFcHxGzFoI4Z/QpE5rE85dtdU9sOgLzTgljrLXgLf0DOjqPg+5mnS1cQ0tquZi\r\n         3XvhjSw3rALwTVXni4z+rbny5yB2a63EoU4t+3BAki2YaZ76r1ni4N4U87ww+EfQPKbf\r\n         pCMyVU8DAPSDl6gRy//b6t+5VVM5H/uNbtUzRYTyQzYmn5gWQEzOYfTwdViimFBNgLIn\r\n         UbAA==\r\nARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;\r\n        h=mime-version:subject:from:to:message-id:sender:date:dkim-signature;\r\n        bh=l3FN/m6rcfI6p0RULSQey2pWnrjV62KjwD2d2yJ0zco=;\r\n        b=XX74QISr8ZDp64FEiU5LB93/6NuWh+kBE9JpswPJ1jI51foji+YwrO8frV/F3Rm4Zr\r\n         XpJW0OmR+RuoHDVF7JvlTsyLT/KXbmd1AfD7xHidJLx/YqH676w29r7fTj7v5/K1oOG7\r\n         I6iQLO0DkLam0KO05spOFwc6iPXDXwGvh9za6OkdJJXo68vJnJVC1dhXE2sIak0w3sgj\r\n         e0ZQKLdPvcNACy0u+paZ06F1C54F79NEIEyrJ7FGtRsOxNNskDzAqTh8d3B/Qfq06k84\r\n         KVy7OHrvpnx0zoJ+z+D7WawHMAIZ7yHbWTbOe7xRfGxve4gAYBZekja9Ap9vSm1IAhmA\r\n         o9cA==\r\nARC-Authentication-Results: i=1; mx.google.com;\r\n       dkim=pass header.i=@qa.tax.service.gov.uk header.s=krs header.b=\"gKFi/23y\";\r\n       spf=pass (google.com: domain of bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk designates 146.20.113.8 as permitted sender) smtp.mailfrom=\"bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk\";\r\n       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=service.gov.uk\r\nReturn-Path: <bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk>\r\nReceived: from mail-m8.mailgun.info (mail-m8.mailgun.info. [146.20.113.8])\r\n        by mx.google.com with UTF8SMTPS id f1si3180323qko.255.2021.10.19.10.00.10\r\n        for <murali.raju211@digital.hmrc.gov.uk>\r\n        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);\r\n        Tue, 19 Oct 2021 10:00:20 -0700 (PDT)\r\nReceived-SPF: pass (google.com: domain of bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk designates 146.20.113.8 as permitted sender) client-ip=146.20.113.8;\r\nAuthentication-Results: mx.google.com;\r\n       dkim=pass header.i=@qa.tax.service.gov.uk header.s=krs header.b=\"gKFi/23y\";\r\n       spf=pass (google.com: domain of bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk designates 146.20.113.8 as permitted sender) smtp.mailfrom=\"bounce+e3106c.0e016-murali.raju211=digital.hmrc.gov.uk@qa.tax.service.gov.uk\";\r\n       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=service.gov.uk\r\nDKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=qa.tax.service.gov.uk;\r\n q=dns/txt; s=krs; t=1634662820; h=Content-Type: Mime-Version: Subject:\r\n From: To: Message-Id: Sender: Date;\r\n bh=l3FN/m6rcfI6p0RULSQey2pWnrjV62KjwD2d2yJ0zco=; b=gKFi/23yhXKEl084W75BbpCtGyrwSVNE5tLEAlVqOQCqRncH4DW/KsdOzjXWAWuDYMPw3b+z\r\n QaAyLyS4V+A5T3wywcc/MtGh8goCoR6YQg7g8xjcPBvzlBn8oXzu8T68aDzf4TTIfdLP1bh0\r\n JBi6yaRBmo6e7hp/cFjyjpu7+D0=\r\nX-Mailgun-Sending-Ip: 146.20.113.8\r\nX-Mailgun-Sid: WyI3YTJiNyIsICJtdXJhbGkucmFqdTIxMUBkaWdpdGFsLmhtcmMuZ292LnVrIiwgIjBlMDE2Il0=\r\nReceived: by luna.mailgun.net with HTTP; Tue, 19 Oct 2021 16:59:37 +0000\r\nDate: Tue, 19 Oct 2021 16:59:37 +0000\r\nSender: noreply@qa.tax.service.gov.uk\r\nMessage-Id: <20211019165937.1.E17B303ADB9A28F9@qa.tax.service.gov.uk>\r\nX-Mailgun-Variables: {\"enrolment\": \"5AQ3uvhXNzOfPk7vc7msDrFOJWF4zwCwRKIQlBrPq4AepI0Xd30+zSt6jO9iURJj\"}\r\nX-Mailgun-Track-Opens: true\r\nX-Mailgun-Tag: template.cds_ddi_setup_dcs_alert\r\nX-Mailgun-Tag: regime.online-payment-service\r\nX-Mailgun-Tag: mdtp\r\nTo: murali.raju211@digital.hmrc.gov.uk\r\nFrom: HMRC Direct Debit <noreply@qa.tax.service.gov.uk>\r\nSubject: HMRC Duty Deferred: Direct Debit set up\r\nMime-Version: 1.0\r\nContent-Type: multipart/alternative; boundary=\"fe7403e71c2b43c38a45e7cba7ae79e3\"\r\n\r\n----- Message truncated -----",
+  "attachments": [
+    {
+      "url": "https://se.api.mailgun.net/v3/domains/qa.tax.service.gov.uk/messages/AwABBfe2p_q6cypj2NZNIZK-0IcDKRtiZg==/attachments/0",
+      "content-type": "image/png",
+      "name": "icon.png",
+      "size": 6539
+    }
+  ],
+  "body-html": "\r\n<html>\r\n<head>\r\n<style>\r\n* {\r\nfont-family:Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n}\r\n</style>\r\n</head>\r\n<body>\r\n<table cellpadding=\"0\" cellspacing=\"0\" class=\"email-wrapper\" style=\"padding-top:32px;background-color:#ffffff;\"><tbody>\r\n<tr><td>\r\n<table cellpadding=0 cellspacing=0><tbody>\r\n<tr><td style=\"max-width:560px;padding:24px 24px 32px;background-color:#fafafa;border:1px solid #e0e0e0;border-radius:2px\">\r\n<img style=\"padding:0 24px 16px 0;float:left\" width=72 height=72 alt=\"Error Icon\" src=\"cid:icon.png\">\r\n<table style=\"min-width:272px;padding-top:8px\"><tbody>\r\n<tr><td><h2 style=\"font-size:20px;color:#212121;font-weight:bold;margin:0\">\r\nMessage blocked\r\n</h2></td></tr>\r\n<tr><td style=\"padding-top:20px;color:#757575;font-size:16px;font-weight:normal;text-align:left\">\r\nYour message to <a style='color:#212121;text-decoration:none'><b>murali.raju211@digital.hmrc.gov.uk</b></a> has been blocked. See technical details below for more information.\r\n</td></tr>\r\n</tbody></table>\r\n</td></tr>\r\n</tbody></table>\r\n</td></tr>\r\n<tr style=\"border:none;background-color:#fff;font-size:12.8px;width:90%\">\r\n<td align=\"left\" style=\"padding:48px 10px\">\r\nThe response was:<br/>\r\n<p style=\"font-family:monospace\">\r\nMessage bounced due to organizational settings.\r\n</p>\r\n</td>\r\n</tr>\r\n</tbody></table>\r\n</body>\r\n</html>\r\n",
+  "References": "<20211019165937.1.E17B303ADB9A28F9@qa.tax.service.gov.uk>",
+  "In-Reply-To": "<20211019165937.1.E17B303ADB9A28F9@qa.tax.service.gov.uk>",
+  "Date": "Tue, 19 Oct 2021 10:00:21 -0700 (PDT)",
+  "Message-Id": "<616ef9a5.1c69fb81.7decd.263b.GMR@mx.google.com>",
+  "Content-Type": "multipart/report; boundary=\"000000000000cd631405ceb79836\"; report-type=\"delivery-status\"",
+  "X-Google-Smtp-Source": "ABdhPJyfD8YQ7vL3m/ZZqaXLofhed5E2CWIsmC/9MhvUde1KfpAtjfteWyTpf3yZVk2M8ZvnCx9wjZZOckkBJXm0d7oQQuP/CmpF86E=",
+  "Subject": "Delivery Status Notification (Failure)"
+}
