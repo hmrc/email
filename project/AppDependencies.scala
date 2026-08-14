@@ -10,7 +10,7 @@ object AppDependencies {
   private val akkaHttpVersion = "10.2.7"
   private val bootstrapPlayVersion = "10.7.0"
   private val catsEffect = "2.5.3"
-  private val hmrcMongo = "2.12.0"
+  private val hmrcMongo = "2.13.0"
   private val domainVersion = "13.0.0"
 
   val compile: Seq[ModuleID] = Seq(

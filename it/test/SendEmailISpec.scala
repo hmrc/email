@@ -105,8 +105,6 @@ class SendEmailISpec
 
   lazy val authHelper: AuthHelper = app.injector.instanceOf[AuthHelper]
 
-  lazy val ggBaseUrl: String = servicesConfig.baseUrl("auth-login-api")
-
   def `/test-only/:domain/email-admin/process-email-queue`(domain: String): URL =
     resource(s"/test-only/$domain/email-admin/process-email-queue")
 
