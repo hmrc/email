@@ -27,15 +27,15 @@ import play.api.http.Status
 import play.api.libs.json.{ JsArray, JsNull, JsValue, Json }
 import play.api.libs.ws.JsonBodyWritables.writeableOf_JsValue
 import play.api.libs.ws.{ EmptyBody, writeableOf_WsBody }
-import play.api.test.Helpers.{ ACCEPTED, BAD_REQUEST, await, * }
+import play.api.test.Helpers.{ ACCEPTED, await, * }
 import test.{ TestConfig, TimedUnit }
 import uk.gov.hmrc.email.model.EmailQueueProcessingResults
 import uk.gov.hmrc.email.repositories.{ EmailQueueRepository, EventAccess, EventsAccessRepository }
 import uk.gov.hmrc.email.utils.ImplicitConversions.stringToURL
 import uk.gov.hmrc.http.HttpResponse
 import uk.gov.hmrc.mongo.test.MongoSupport
-import uk.gov.hmrc.play.bootstrap.config.ServicesConfig
 import util.AuthHelper
+
 import java.net.URL
 import java.time.{ Duration, Instant }
 import java.util.Base64
@@ -99,9 +99,8 @@ class SendEmailISpec
 
   protected lazy val eventAccessRespository = new EventsAccessRepository(mongoComponent)
 
-  val servicesConfig = app.injector.instanceOf[ServicesConfig]
-
-  private lazy val messageUrl = servicesConfig.baseUrl("message")
+  //messages service in Service Manager
+  private lazy val messageUrl = "http://localhost:8910"
 
   def `/message/system/:id/send-alert`(id: String): URL =
     s"$messageUrl/message/system/$id/send-alert"
