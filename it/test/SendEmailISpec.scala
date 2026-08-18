@@ -99,7 +99,7 @@ class SendEmailISpec
 
   protected lazy val eventAccessRespository = new EventsAccessRepository(mongoComponent)
 
-  //messages service in Service Manager
+  // messages service in Service Manager
   private lazy val messageUrl = "http://localhost:8910"
 
   def `/message/system/:id/send-alert`(id: String): URL =
