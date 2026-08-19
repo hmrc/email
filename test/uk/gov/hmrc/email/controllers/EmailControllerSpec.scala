@@ -156,8 +156,7 @@ class EmailControllerSpec extends SpecBase with ScalaFutures with GuiceOneAppPer
         )
         .configure(
           "microservice.metrics.enabled" -> false,
-          "metrics.enabled"              -> false,
-          "auditing.enabled"             -> false
+          "metrics.enabled"              -> false
         )
         .build()
 

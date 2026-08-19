@@ -31,8 +31,7 @@ class SenderDomainConfigurationLoaderSpec extends SpecBase {
     val app: Application = applicationBuilder
       .configure(
         "microservice.metrics.enabled" -> false,
-        "metrics.enabled"              -> false,
-        "auditing.enabled"             -> false
+        "metrics.enabled"              -> false
       )
       .build()
 

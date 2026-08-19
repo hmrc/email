@@ -27,7 +27,6 @@ object TestConfig {
     "scheduling.urgentQueue.initialDelay"     -> "1 day", // Deliberate - effectively disabled
     "scheduling.backgroundQueue.initialDelay" -> "1 day", // Deliberate - effectively disabled
     "scheduling.defaultQueue.initialDelay"    -> "1 day", // Deliberate - effectively disabled
-    "scheduling.loadBounces.initialDelay"     -> "1 day", // Deliberate - effectively disabled
     "scheduling.event-emitter.initialDelay"   -> "1 day" // Deliberate - effectively disabled
   )
 

@@ -69,8 +69,7 @@ class MailboxMetricsSpec extends SpecBase {
       )
       .configure(
         "microservice.metrics.enabled" -> false,
-        "metrics.enabled"              -> false,
-        "auditing.enabled"             -> false
+        "metrics.enabled"              -> false
       )
       .build()
 
