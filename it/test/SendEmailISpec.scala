@@ -1,11 +1,17 @@
 /*
- * Copyright 2024 HM Revenue & Customs
+ * Copyright 2026 HM Revenue & Customs
  *
- */
-
-/*
- * Copyright 2020 HM Revenue & Customs
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 import com.typesafe.config.Config
@@ -21,15 +27,15 @@ import play.api.http.Status
 import play.api.libs.json.{ JsArray, JsNull, JsValue, Json }
 import play.api.libs.ws.JsonBodyWritables.writeableOf_JsValue
 import play.api.libs.ws.{ EmptyBody, writeableOf_WsBody }
-import play.api.test.Helpers.{ ACCEPTED, BAD_REQUEST, await, * }
+import play.api.test.Helpers.{ ACCEPTED, await, * }
 import test.{ TestConfig, TimedUnit }
 import uk.gov.hmrc.email.model.EmailQueueProcessingResults
 import uk.gov.hmrc.email.repositories.{ EmailQueueRepository, EventAccess, EventsAccessRepository }
 import uk.gov.hmrc.email.utils.ImplicitConversions.stringToURL
 import uk.gov.hmrc.http.HttpResponse
 import uk.gov.hmrc.mongo.test.MongoSupport
-import uk.gov.hmrc.play.bootstrap.config.ServicesConfig
 import util.AuthHelper
+
 import java.net.URL
 import java.time.{ Duration, Instant }
 import java.util.Base64
@@ -93,9 +99,8 @@ class SendEmailISpec
 
   protected lazy val eventAccessRespository = new EventsAccessRepository(mongoComponent)
 
-  val servicesConfig = app.injector.instanceOf[ServicesConfig]
-
-  private lazy val messageUrl = servicesConfig.baseUrl("message")
+  // messages service in Service Manager
+  private lazy val messageUrl = "http://localhost:8910"
 
   def `/message/system/:id/send-alert`(id: String): URL =
     s"$messageUrl/message/system/$id/send-alert"
@@ -104,8 +109,6 @@ class SendEmailISpec
     resource(s"/$domain/email")
 
   lazy val authHelper: AuthHelper = app.injector.instanceOf[AuthHelper]
-
-  lazy val ggBaseUrl: String = servicesConfig.baseUrl("auth-login-api")
 
   def `/test-only/:domain/email-admin/process-email-queue`(domain: String): URL =
     resource(s"/test-only/$domain/email-admin/process-email-queue")
