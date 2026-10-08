@@ -10,7 +10,7 @@ object AppDependencies {
   private val akkaHttpVersion = "10.2.7"
   private val bootstrapPlayVersion = "10.7.0"
   private val catsEffect = "2.5.3"
-  private val hmrcMongo = "2.13.0"
+  private val hmrcMongo = "2.14.0"
   private val domainVersion = "13.0.0"
 
   val compile: Seq[ModuleID] = Seq(
@@ -18,7 +18,7 @@ object AppDependencies {
     "uk.gov.hmrc"       %% "bootstrap-backend-play-30"         % bootstrapPlayVersion,
     "org.typelevel"     %% "cats-core"                         % "2.9.0",
     "uk.gov.hmrc.mongo" %% "hmrc-mongo-work-item-repo-play-30" % hmrcMongo,
-    "uk.gov.hmrc"       %% "cluster-work-throttling"           % "9.2.0",
+    "uk.gov.hmrc"       %% "cluster-work-throttling"           % "9.4.0",
     "net.codingwell"    %% "scala-guice"                       % "5.1.1",
     "org.playframework" %% "play-streams"                      % akkaVersion,
     "org.apache.pekko"  %% "pekko-stream"                      % pekkoVersion,
