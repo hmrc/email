@@ -6,5 +6,4 @@ service-type: Backend
 test-repositories:
   - digital-contact-performance-tests
   - platform-performance-tests
-  - digital-contact-2wsm-test
 tags: []
